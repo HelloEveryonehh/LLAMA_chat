@@ -1,0 +1,96 @@
+@use './var.scss';
+
+html,
+body {
+  padding: 0 !important;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+html #app,
+body #app {
+  width: 100%;
+  height: 100%;
+}
+/* 全局滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0003;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.mainl-white {
+  background-color: white;
+  width: 100%;
+  min-height: calc(
+    100vh - var(--el-header-height) - var(--app-content-padding) - var(--app-content-padding) - var(--el-footer-height)
+  );
+}
+
+.main-full {
+  width: 100%;
+  height: calc(
+    100vh - var(--el-header-height) - var(--app-content-padding) - var(--app-content-padding) - var(--el-footer-height)
+  );
+}
+
+.main-full-white {
+  background-color: white;
+  width: 100%;
+  height: calc(
+    100vh - var(--el-header-height) - var(--app-content-padding) - var(--app-content-padding) - var(--el-footer-height)
+  );
+}
+
+// 卡片
+.card {
+  box-sizing: border-box;
+  padding: 20px;
+  overflow-x: hidden;
+  background-color: var(--el-bg-color);
+  border: 1px solid var(--el-border-color-light);
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgb(0 0 0 / 5%);
+}
+
+.pagination-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* 外边距、内边距全局样式 */
+@for $i from 0 through 100 {
+  .mt#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mr#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mb#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ml#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .pt#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pr#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pb#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pl#{$i} {
+    padding-left: #{$i}px !important;
+  }
+}
